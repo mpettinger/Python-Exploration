@@ -1,0 +1,16 @@
+#import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
+#import math
+
+def decimal(x):
+    y = x/255
+    return y
+
+image = mpimg.imread("/home/pi/Desktop/camerafiles/mikescam1.jpg","r")
+image_array = np.array(image)
+#print(f"The array shape is: {image_array.shape}")
+for i in range(0,3):
+    top_slice = image_array[:,:,i]
+    print(f"Slice {i}")
+    print(decimal(top_slice))
